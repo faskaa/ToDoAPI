@@ -1,0 +1,87 @@
+2024-05-04 00:56:39.597 +04:00 [INF] Now listening on: https://localhost:7252
+2024-05-04 00:56:39.643 +04:00 [INF] Now listening on: http://localhost:5118
+2024-05-04 00:56:39.650 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-04 00:56:39.651 +04:00 [INF] Hosting environment: Development
+2024-05-04 00:56:39.651 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-05-04 00:56:40.288 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-05-04 00:56:40.886 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 602.9946ms
+2024-05-04 00:56:40.891 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-05-04 00:56:40.900 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 8.0411ms
+2024-05-04 00:56:40.912 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-05-04 00:56:41.021 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 108.8508ms
+2024-05-04 00:56:41.260 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-05-04 00:56:41.404 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 143.9609ms
+2024-05-04 00:57:01.535 +04:00 [INF] Now listening on: https://localhost:7252
+2024-05-04 00:57:01.565 +04:00 [INF] Now listening on: http://localhost:5118
+2024-05-04 00:57:01.573 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-04 00:57:01.574 +04:00 [INF] Hosting environment: Development
+2024-05-04 00:57:01.574 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-05-04 00:57:01.887 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-05-04 00:57:02.152 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 267.2327ms
+2024-05-04 00:57:02.160 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-05-04 00:57:02.163 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 3.6678ms
+2024-05-04 00:57:02.165 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-05-04 00:57:02.173 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.9315ms
+2024-05-04 00:57:02.468 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-05-04 00:57:02.565 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.3022ms
+2024-05-04 00:57:06.499 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-05-04 00:57:06.509 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-04 00:57:06.530 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-05-04 00:57:07.087 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-05-04 00:57:07.618 +04:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Date], [t].[Name]
+FROM [Todos] AS [t]
+2024-05-04 00:57:07.644 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 1108.4428ms
+2024-05-04 00:57:07.645 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-04 00:57:07.647 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> TodoGetDTO
+System.Collections.Generic.List`1[[ToDoApp.Entities.Todo, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> ToDoApp.DTOs.TodoGetDTO
+   at lambda_method7(Closure , Object , TodoGetDTO , ResolutionContext )
+   at ToDoApp.Controllers.ToDoController.Get() in C:\Users\acer\Desktop\ToDoApp\ToDoApp\Controllers\ToDoController.cs:line 29
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-05-04 00:57:07.690 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 500 - text/plain;+charset=utf-8 1190.8064ms
+2024-05-04 00:57:31.814 +04:00 [INF] Now listening on: https://localhost:7252
+2024-05-04 00:57:31.843 +04:00 [INF] Now listening on: http://localhost:5118
+2024-05-04 00:57:31.846 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-04 00:57:31.846 +04:00 [INF] Hosting environment: Development
+2024-05-04 00:57:31.846 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-05-04 00:57:32.071 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-05-04 00:57:32.296 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 228.5072ms
+2024-05-04 00:57:32.309 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-05-04 00:57:32.309 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-05-04 00:57:32.312 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 3.0677ms
+2024-05-04 00:57:32.318 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.6353ms
+2024-05-04 00:57:32.378 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-05-04 00:57:32.418 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 39.6063ms
+2024-05-04 00:57:36.002 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-05-04 00:57:36.013 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-04 00:57:36.058 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-05-04 00:57:36.701 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-05-04 00:57:37.150 +04:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Date], [t].[Name]
+FROM [Todos] AS [t]
+2024-05-04 00:57:37.174 +04:00 [INF] Retrieved all Todo items successfully.
+2024-05-04 00:57:37.179 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-04 00:57:37.198 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 1135.3112ms
+2024-05-04 00:57:37.199 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-04 00:57:37.204 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 1202.0038ms
