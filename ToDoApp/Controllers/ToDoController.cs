@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.DAL;
 using ToDoApp.DTOs;
@@ -22,6 +23,7 @@ namespace ToDoApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             List<Todo> todo = _context.Todos.Where(x=>x.IsDeleted == false).ToList();

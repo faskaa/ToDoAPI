@@ -52282,3 +52282,16 @@ WHERE [t].[IsDeleted] = CAST(0 AS bit)
 2024-05-05 02:06:26.476 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 786.7431ms
 2024-05-05 02:06:26.477 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
 2024-05-05 02:06:26.479 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 814.4351ms
+2024-05-05 02:06:35.394 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo/get/3699 - -
+2024-05-05 02:06:35.395 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-05 02:06:35.414 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-05-05 02:06:35.426 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-05-05 02:06:35.474 +04:00 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-05-05 02:06:35.475 +04:00 [ERR] Todo item not found with 3699 ID
+2024-05-05 02:06:35.477 +04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-05-05 02:06:35.480 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 65.9743ms
+2024-05-05 02:06:35.480 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-05-05 02:06:35.480 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo/get/3699 - - - 404 - application/problem+json;+charset=utf-8 86.5753ms

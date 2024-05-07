@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ToDoApp.Entities;
 
 namespace ToDoApp.DAL
 {
-    public class ToDoDBContext : DbContext
+    public class ToDoDBContext : IdentityDbContext
     {
         public ToDoDBContext(DbContextOptions<ToDoDBContext> options) : base(options)
         {
