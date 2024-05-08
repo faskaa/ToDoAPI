@@ -110,12 +110,11 @@ namespace ToDoApp.Controllers
                new Claim(ClaimTypes.Name , user.UserName),
                new Claim(ClaimTypes.Email , user.Email),
               };
-            _logger.LogInformation("Creating claims");
 
             IList<string> roles = await _userManager.GetRolesAsync(user);
-            _logger.LogInformation("Nergiz fucked");
-
             claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
+           
+            _logger.LogInformation("Creating claims");
 
             string keyStr = _configuration["JWT:SecurityKey"]!;
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyStr));
@@ -130,6 +129,14 @@ namespace ToDoApp.Controllers
 
             string tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
             return Ok(tokenStr);
+        }
+
+        [HttpPost("SignOut")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> Exit()
+        {
+            await _signInManager.SignOutAsync(); 
+            return Ok();
         }
 
         //[HttpPost("CreateRole")]
