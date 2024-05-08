@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using AutoMapper.Execution;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
 using System.Text;
 using ToDoApp.DAL;
@@ -38,13 +40,14 @@ namespace ToDoApp.Controllers
         }
 
         [HttpPost("Register")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Registration([FromForm]RegistrationDTO account)
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogError("aaa");
+                _logger.LogError("Registration failed due to invalid model state");
                 return BadRequest();
-
             }
 
             IdentityUser user = new IdentityUser
@@ -53,24 +56,31 @@ namespace ToDoApp.Controllers
                 Email = account.Email,
             };
 
+            _logger.LogInformation("Creating a new user account");
             IdentityResult result = await _userManager.CreateAsync(user, account.Password);
+
             if (!result.Succeeded)
             {
-                _logger.LogError("aaa");
-                foreach (var item in result.Errors)
+                _logger.LogError("Registration failed due to errors");
+                foreach (var error in result.Errors)
                 {
-                    return BadRequest(item.Description);
+                    _logger.LogError($"Error: {error.Description}");
+
                 }
-                //return BadRequest();
+                    return BadRequest(result.Errors.Select(error=>error.Description));
             }
 
             await _userManager.AddToRoleAsync(user, RoleEnum.Member.ToString());
+            _logger.LogInformation("User added to the Member role");
                     
             return Ok(result);
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginDTO account)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Login([FromForm]LoginDTO account)
         {
             if (!ModelState.IsValid)
             {
@@ -78,14 +88,15 @@ namespace ToDoApp.Controllers
                 return BadRequest();
             }
 
+            _logger.LogInformation($"User finding by name: {account.Username}");
             IdentityUser user = await _userManager.FindByNameAsync(account.Username);
-
             if (user is null)
             {
                 _logger.LogError($"User not found: {account}");
                 return NotFound();
             }
 
+            _logger.LogInformation($"Checking user{account.Username}'s password");
             bool result = await _userManager.CheckPasswordAsync(user, account.Password);
             if (!result)
             {
@@ -99,8 +110,10 @@ namespace ToDoApp.Controllers
                new Claim(ClaimTypes.Name , user.UserName),
                new Claim(ClaimTypes.Email , user.Email),
               };
+            _logger.LogInformation("Creating claims");
 
             IList<string> roles = await _userManager.GetRolesAsync(user);
+            _logger.LogInformation("Nergiz fucked");
 
             claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
 

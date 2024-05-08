@@ -1,7 +1,10 @@
-﻿namespace ToDoApp.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToDoApp.DTOs
 {
     public class TodoCreateDTO
     {
+        [Required]
         public string Name { get; set; }
     }
 }
