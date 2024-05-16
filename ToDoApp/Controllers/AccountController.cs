@@ -42,7 +42,7 @@ namespace ToDoApp.Controllers
         [HttpPost("Register")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Registration([FromForm]RegistrationDTO account)
+        public async Task<IActionResult> Registration(RegistrationDTO account)
         {
             if (!ModelState.IsValid)
             {
@@ -68,6 +68,13 @@ namespace ToDoApp.Controllers
 
                 }
                     return BadRequest(result.Errors.Select(error=>error.Description));
+            }
+
+            bool isRole = _context.Roles.Any(x=>x.Name == "Member");
+            if (!isRole)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                await _roleManager.CreateAsync(new IdentityRole("Member"));
             }
 
             await _userManager.AddToRoleAsync(user, RoleEnum.Member.ToString());
