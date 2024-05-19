@@ -80,6 +80,8 @@ namespace ToDoApp.Controllers
             await _userManager.AddToRoleAsync(user, RoleEnum.Member.ToString());
             _logger.LogInformation("User added to the Member role");
                     
+            Awair
+
             return Ok(result);
         }
 
