@@ -46,8 +46,12 @@ namespace ToDoApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogError("Registration failed due to invalid model state");
-                return BadRequest();
+                _logger.LogError("Registration failed due to invalid model state" , account);
+                return BadRequest(new
+                {
+                    Message = "Invalid model state",
+                    Errors = ModelState.Values.SelectMany(x => x.Errors).Select(x=>x.ErrorMessage)
+                });
             }
 
             IdentityUser user = new IdentityUser
@@ -56,18 +60,21 @@ namespace ToDoApp.Controllers
                 Email = account.Email,
             };
 
-            _logger.LogInformation("Creating a new user account");
+            _logger.LogInformation("Attempting to create a new user account" , user);
             IdentityResult result = await _userManager.CreateAsync(user, account.Password);
 
             if (!result.Succeeded)
             {
-                _logger.LogError("Registration failed due to errors");
-                foreach (var error in result.Errors)
+                _logger.LogError("User creation failed", new
                 {
-                    _logger.LogError($"Error: {error.Description}");
-
-                }
-                    return BadRequest(result.Errors.Select(error=>error.Description));
+                    Error = result.Errors.Select(x=>x.Description)
+                });
+                
+                return BadRequest(new
+                {
+                    Message = "User creation failed",
+                    Error = result.Errors.Select(x=>x.Description)
+                });
             }
 
             bool isRole = _context.Roles.Any(x=>x.Name == "Member");
@@ -80,7 +87,7 @@ namespace ToDoApp.Controllers
             await _userManager.AddToRoleAsync(user, RoleEnum.Member.ToString());
             _logger.LogInformation("User added to the Member role");
                     
-            Awair
+            
 
             return Ok(result);
         }
@@ -154,5 +161,34 @@ namespace ToDoApp.Controllers
         //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
         //    await _roleManager.CreateAsync(new IdentityRole("Member"));
         //}
+
+
+        //private async Task CheckRoleAsync(string roleName)
+        //{
+        //    if (!_context.Roles.Any(x=>x.Name == roleName))
+        //    {
+        //        _logger.LogInformation("Role does not exist. Creating role", new
+        //        {
+        //            RoleName = roleName
+        //        });
+
+        //        IdentityResult roleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
+        //        await _roleManager.CreateAsync(new IdentityRole("Admin"));
+
+
+        //        if (!roleResult.Succeeded)
+        //        {
+        //            _logger.LogError("Failed to creatin role", new
+        //            {
+        //                RoleName = roleName,
+        //                Error = roleResult.Errors
+        //            });
+        //            throw new InvalidOperationException($"Failed to creating role: {roleName} ");
+        //        }
+        //    }
+
+            
+        //}
     }
+
 }

@@ -1,0 +1,161 @@
+2024-06-01 13:53:12.775 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-01 13:53:12.888 +04:00 [INF] Creating key {07218fb9-63dc-489f-9c7e-e8a7839f8b91} with creation date 2024-06-01 09:53:12Z, activation date 2024-06-01 09:53:12Z, and expiration date 2024-08-30 09:53:12Z.
+2024-06-01 13:53:12.897 +04:00 [INF] Writing data to file 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys\key-07218fb9-63dc-489f-9c7e-e8a7839f8b91.xml'.
+2024-06-01 13:53:13.089 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-01 13:53:13.089 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-01 13:53:13.094 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-01 13:53:13.094 +04:00 [INF] Hosting environment: Development
+2024-06-01 13:53:13.094 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-01 13:53:14.747 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger - -
+2024-06-01 13:53:14.981 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger - - - 301 0 - 242.9885ms
+2024-06-01 13:53:15.802 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-01 13:53:16.193 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 390.9529ms
+2024-06-01 13:53:16.199 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/swagger-ui.css - -
+2024-06-01 13:53:16.200 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/swagger-ui-standalone-preset.js - -
+2024-06-01 13:53:16.200 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/swagger-ui-bundle.js - -
+2024-06-01 13:53:16.200 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-01 13:53:16.203 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 3.0209ms
+2024-06-01 13:53:16.211 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-01 13:53:16.221 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-06-01 13:53:16.221 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-06-01 13:53:16.224 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/swagger-ui.css - - - 200 144929 text/css 24.5736ms
+2024-06-01 13:53:16.224 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 24.3532ms
+2024-06-01 13:53:16.229 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-06-01 13:53:16.229 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 29.1553ms
+2024-06-01 13:53:16.274 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.9588ms
+2024-06-01 13:53:16.548 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-01 13:53:16.714 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.3947ms
+2024-06-01 13:53:16.728 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/favicon-32x32.png - -
+2024-06-01 13:53:16.729 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-06-01 13:53:16.729 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/favicon-32x32.png - - - 200 628 image/png 0.8060ms
+2024-06-01 13:53:30.920 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary5b5LBkCRCe9q5ow5 140
+2024-06-01 13:53:30.964 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-01 13:53:30.966 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-01 13:53:30.967 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary5b5LBkCRCe9q5ow5 140 - 401 0 - 47.0855ms
+2024-06-01 13:54:09.942 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-01 13:54:10.090 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-01 13:54:10.090 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-01 13:54:10.094 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-01 13:54:10.094 +04:00 [INF] Hosting environment: Development
+2024-06-01 13:54:10.094 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-01 13:54:10.445 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-01 13:54:10.837 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 394.3406ms
+2024-06-01 13:54:10.838 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-01 13:54:10.838 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-01 13:54:10.841 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 2.6371ms
+2024-06-01 13:54:10.850 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.0324ms
+2024-06-01 13:54:10.991 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-01 13:54:11.174 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.4232ms
+2024-06-01 13:54:22.573 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary1HZt2qH0SHvbfWXe 140
+2024-06-01 13:54:22.638 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:54:22.702 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-01 13:54:23.233 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-01 13:54:23.273 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 558.8622ms
+2024-06-01 13:54:23.276 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:54:23.286 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Todo -> TodoCreateDTO
+ToDoApp.Entities.Todo -> ToDoApp.DTOs.TodoCreateDTO
+   at lambda_method13(Closure , Object , TodoCreateDTO , ResolutionContext )
+   at ToDoApp.Controllers.ToDoController.Create(TodoCreateDTO newTodo) in C:\Users\acer\Desktop\ToDoApp\ToDoApp\Controllers\ToDoController.cs:line 71
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-06-01 13:54:23.384 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary1HZt2qH0SHvbfWXe 140 - 500 - text/plain;+charset=utf-8 811.5133ms
+2024-06-01 13:55:24.088 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-01 13:55:24.227 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-01 13:55:24.227 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-01 13:55:24.231 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-01 13:55:24.231 +04:00 [INF] Hosting environment: Development
+2024-06-01 13:55:24.231 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-01 13:55:24.351 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-01 13:55:24.593 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 245.0701ms
+2024-06-01 13:55:24.601 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-01 13:55:24.601 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-01 13:55:24.603 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 2.5458ms
+2024-06-01 13:55:24.613 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.2130ms
+2024-06-01 13:55:24.726 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-01 13:55:24.852 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.4588ms
+2024-06-01 13:55:33.080 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary8IY8pNZHYS9s2N2d 136
+2024-06-01 13:55:33.155 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:55:33.233 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-01 13:55:33.781 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-01 13:55:33.819 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 575.3905ms
+2024-06-01 13:55:33.823 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:55:33.831 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Todo -> TodoCreateDTO
+ToDoApp.Entities.Todo -> ToDoApp.DTOs.TodoCreateDTO
+   at lambda_method13(Closure , Object , TodoCreateDTO , ResolutionContext )
+   at ToDoApp.Controllers.ToDoController.Create(TodoCreateDTO newTodo) in C:\Users\acer\Desktop\ToDoApp\ToDoApp\Controllers\ToDoController.cs:line 71
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-06-01 13:55:33.892 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary8IY8pNZHYS9s2N2d 136 - 500 - text/plain;+charset=utf-8 811.2786ms
+2024-06-01 13:56:09.579 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-01 13:56:09.693 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-01 13:56:09.693 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-01 13:56:09.695 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-01 13:56:09.695 +04:00 [INF] Hosting environment: Development
+2024-06-01 13:56:09.696 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-01 13:56:09.882 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-01 13:56:10.114 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 234.3012ms
+2024-06-01 13:56:10.116 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-01 13:56:10.116 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-01 13:56:10.119 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 2.8418ms
+2024-06-01 13:56:10.130 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.3973ms
+2024-06-01 13:56:10.280 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-01 13:56:10.375 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 94.6348ms
+2024-06-01 13:56:18.029 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryBMG8YSOVqWHMbrXD 136
+2024-06-01 13:56:18.093 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:56:18.163 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-01 13:56:18.662 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-01 13:56:20.200 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-01 13:56:21.396 +04:00 [INF] Executed DbCommand (145ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-01 13:56:21.520 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-01 13:56:21.560 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 3385.1806ms
+2024-06-01 13:56:21.560 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-01 13:56:21.567 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryBMG8YSOVqWHMbrXD 136 - 200 - application/json;+charset=utf-8 3538.4228ms

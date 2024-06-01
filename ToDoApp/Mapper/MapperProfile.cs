@@ -9,6 +9,7 @@ namespace ToDoApp.Mapper
         public MapperProfile()
         {
             CreateMap<Todo, TodoGetDTO>();
+            CreateMap<Todo, TodoCreateDTO>();
         }
     }
 }
