@@ -159,3 +159,17 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
 2024-06-01 13:56:21.560 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 3385.1806ms
 2024-06-01 13:56:21.560 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
 2024-06-01 13:56:21.567 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryBMG8YSOVqWHMbrXD 136 - 200 - application/json;+charset=utf-8 3538.4228ms
+2024-06-01 13:57:28.819 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-01 13:57:28.964 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-01 13:57:28.964 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-01 13:57:28.969 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-01 13:57:28.969 +04:00 [INF] Hosting environment: Development
+2024-06-01 13:57:28.970 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-01 13:57:29.139 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-01 13:57:29.490 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 353.4935ms
+2024-06-01 13:57:29.503 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-01 13:57:29.503 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-01 13:57:29.509 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 5.4142ms
+2024-06-01 13:57:29.519 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.1482ms
+2024-06-01 13:57:29.702 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-01 13:57:29.864 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 161.7594ms

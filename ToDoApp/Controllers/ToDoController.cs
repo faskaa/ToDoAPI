@@ -25,7 +25,7 @@ namespace ToDoApp.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [Authorize]
+        //[Authorize]
         public IActionResult Get()
         {
             List<Todo> todo = _context.Todos.Where(x=>x.IsDeleted == false).ToList();
