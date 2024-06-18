@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoApp.DAL;
 
@@ -11,9 +12,10 @@ using ToDoApp.DAL;
 namespace ToDoApp.Migrations
 {
     [DbContext(typeof(ToDoDBContext))]
-    partial class ToDoDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240618192349_toDoColumnAddedToUser")]
+    partial class toDoColumnAddedToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -233,7 +235,7 @@ namespace ToDoApp.Migrations
 
                     b.Property<string>("CustomUserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -246,8 +248,6 @@ namespace ToDoApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomUserId");
 
                     b.ToTable("Todos");
                 });
@@ -301,22 +301,6 @@ namespace ToDoApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ToDoApp.Entities.Todo", b =>
-                {
-                    b.HasOne("ToDoApp.Entities.CustomUser", "CustomUser")
-                        .WithMany("Todos")
-                        .HasForeignKey("CustomUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CustomUser");
-                });
-
-            modelBuilder.Entity("ToDoApp.Entities.CustomUser", b =>
-                {
-                    b.Navigation("Todos");
                 });
 #pragma warning restore 612, 618
         }

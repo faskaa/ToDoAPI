@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.DAL;
 using ToDoApp.DTOs;
@@ -14,21 +15,26 @@ namespace ToDoApp.Controllers
         private readonly ToDoDBContext _context;
         private readonly ILogger<ToDoController> _logger;
         private readonly IMapper _mapper;
+        private readonly UserManager<CustomUser> _userMananager;
+        private readonly SignInManager<CustomUser> _signInManager;
 
-        public ToDoController(ToDoDBContext context, ILogger<ToDoController> logger, IMapper mapper)
+        public ToDoController(ToDoDBContext context, ILogger<ToDoController> logger, IMapper mapper, SignInManager<CustomUser> signInManager, UserManager<CustomUser> userManager)
         {
             _context = context;
             _logger = logger;
             _mapper = mapper;
+            _signInManager = signInManager;
+            _userMananager = userManager;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Authorize]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            List<Todo> todo = _context.Todos.Where(x=>x.IsDeleted == false).ToList();
+            CustomUser user = await _userMananager.GetUserAsync(User);
+            List<Todo> todo = _context.Todos.Where(x=>x.IsDeleted == false && x.CustomUserId == user.Id).ToList();
             List<TodoGetDTO> dto = _mapper.Map<List<TodoGetDTO>>(todo);
             _logger.LogInformation("Retrieved all Todo items successfully.");
             return Ok(dto);
@@ -58,13 +64,17 @@ namespace ToDoApp.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Authorize]
-        public IActionResult Create([FromForm] TodoCreateDTO newTodo)
+        public async Task<IActionResult> Create([FromForm] TodoCreateDTO newTodo)
         {
+            CustomUser user = await _userMananager.GetUserAsync(User);
+            
+
             Todo todo = new Todo()
             {
                 Name = newTodo.Name,
                 Date = DateTime.Now,
                 IsDeleted = false,
+                CustomUserId = user.Id
             };
 
             _logger.LogInformation($"Created Todo item successfully. ID: {todo.Id}");

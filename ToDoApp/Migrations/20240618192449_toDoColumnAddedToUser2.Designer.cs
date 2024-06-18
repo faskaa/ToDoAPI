@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoApp.DAL;
 
@@ -11,9 +12,10 @@ using ToDoApp.DAL;
 namespace ToDoApp.Migrations
 {
     [DbContext(typeof(ToDoDBContext))]
-    partial class ToDoDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240618192449_toDoColumnAddedToUser2")]
+    partial class toDoColumnAddedToUser2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -306,17 +308,12 @@ namespace ToDoApp.Migrations
             modelBuilder.Entity("ToDoApp.Entities.Todo", b =>
                 {
                     b.HasOne("ToDoApp.Entities.CustomUser", "CustomUser")
-                        .WithMany("Todos")
+                        .WithMany()
                         .HasForeignKey("CustomUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("CustomUser");
-                });
-
-            modelBuilder.Entity("ToDoApp.Entities.CustomUser", b =>
-                {
-                    b.Navigation("Todos");
                 });
 #pragma warning restore 612, 618
         }

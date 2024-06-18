@@ -1261,3 +1261,1524 @@ WHERE [a].[Id] = @__p_0
 2024-06-18 21:21:44.473 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.6360ms
 2024-06-18 21:21:44.831 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
 2024-06-18 21:21:44.898 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 66.7551ms
+2024-06-18 22:35:09.898 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-18 22:35:10.102 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-18 22:35:10.102 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-18 22:35:10.105 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-18 22:35:10.105 +04:00 [INF] Hosting environment: Development
+2024-06-18 22:35:10.105 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-18 22:35:10.480 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-18 22:35:10.817 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 342.9432ms
+2024-06-18 22:35:10.819 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-18 22:35:10.826 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 6.8591ms
+2024-06-18 22:35:11.028 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-18 22:35:11.155 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.0393ms
+2024-06-18 22:37:09.829 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/Register - -
+2024-06-18 22:37:09.846 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:09.850 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/Register - - - 204 - - 20.9642ms
+2024-06-18 22:37:09.854 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Register application/json 115
+2024-06-18 22:37:09.854 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:09.881 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Registration (ToDoApp)'
+2024-06-18 22:37:09.909 +04:00 [INF] Route matched with {action = "Registration", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Registration(ToDoApp.DTOs.RegistrationDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:37:10.117 +04:00 [INF] Attempting to create a new user account
+2024-06-18 22:37:10.645 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:11.201 +04:00 [INF] Executed DbCommand (61ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:37:11.233 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-18 22:37:11.364 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2024-06-18 22:37:11.401 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]
+        WHERE [a].[Name] = N'Member') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-18 22:37:11.414 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-18 22:37:11.444 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2024-06-18 22:37:11.448 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-18 22:37:11.457 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:37:11.460 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-18 22:37:11.474 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2024-06-18 22:37:11.486 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:11.490 +04:00 [INF] User added to the Member role
+2024-06-18 22:37:11.496 +04:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Identity.IdentityResult'.
+2024-06-18 22:37:11.511 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Registration (ToDoApp) in 1597.6387ms
+2024-06-18 22:37:11.511 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Registration (ToDoApp)'
+2024-06-18 22:37:11.514 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Register application/json 115 - 200 - application/json;+charset=utf-8 1660.7675ms
+2024-06-18 22:37:21.785 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundary2nWjdmHHS8S6wIB8 260
+2024-06-18 22:37:21.790 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:21.790 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:37:21.798 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:37:21.811 +04:00 [INF] User finding by name: FaskaMaybeTaken
+2024-06-18 22:37:21.847 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:21.849 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:37:21.849 +04:00 [INF] Checking userFaskaMaybeTaken's password
+2024-06-18 22:37:21.889 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 22:37:21.891 +04:00 [INF] Creating claims
+2024-06-18 22:37:21.954 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 22:37:21.955 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 157.1587ms
+2024-06-18 22:37:21.955 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:37:21.955 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundary2nWjdmHHS8S6wIB8 260 - 200 - text/plain;+charset=utf-8 170.4364ms
+2024-06-18 22:37:21.977 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:37:21.977 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:21.977 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:21.977 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:21.977 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.3836ms
+2024-06-18 22:37:21.977 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - - - 204 - - 0.4501ms
+2024-06-18 22:37:21.979 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:21.979 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:21.980 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:37:21.980 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:22.044 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:37:22.046 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:22.047 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:22.047 +04:00 [INF] Route matched with {action = "GetUserInf", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInf() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:37:22.057 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:22.061 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:22.068 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:22.073 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 22:37:22.074 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-18 22:37:22.081 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp) in 33.9241ms
+2024-06-18 22:37:22.081 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:37:22.081 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/Account/GetUser - - - 200 - application/json;+charset=utf-8 101.1513ms
+2024-06-18 22:37:22.095 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:22.095 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:22.101 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 54.3669ms
+2024-06-18 22:37:22.101 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:22.101 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 121.9032ms
+2024-06-18 22:37:25.652 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - -
+2024-06-18 22:37:25.652 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:25.652 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - - - 204 - - 0.3801ms
+2024-06-18 22:37:25.654 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundarylI1QMN5yxZyBKZ7y 236
+2024-06-18 22:37:25.656 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:25.657 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:25.659 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:25.671 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:25.682 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:25.698 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:25.703 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:25.703 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:25.704 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 45.0361ms
+2024-06-18 22:37:25.704 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:25.705 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundarylI1QMN5yxZyBKZ7y 236 - 200 - application/json;+charset=utf-8 50.7518ms
+2024-06-18 22:37:25.709 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:25.709 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:25.710 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:25.710 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:25.711 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:25.712 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:25.712 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:25.712 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:25.712 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.055ms
+2024-06-18 22:37:25.712 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:25.712 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.5027ms
+2024-06-18 22:37:26.440 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundary6wwmVBktyLLAttKp 237
+2024-06-18 22:37:26.440 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:26.441 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:26.441 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:26.442 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:26.443 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:26.444 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:26.446 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:26.446 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:26.446 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 5.346ms
+2024-06-18 22:37:26.446 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:26.446 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundary6wwmVBktyLLAttKp 237 - 200 - application/json;+charset=utf-8 6.0688ms
+2024-06-18 22:37:26.451 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:26.451 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:26.452 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:26.452 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:26.452 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:26.453 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:26.454 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:26.454 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:26.454 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 1.9237ms
+2024-06-18 22:37:26.454 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:26.454 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 2.6240ms
+2024-06-18 22:37:29.095 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/create - -
+2024-06-18 22:37:29.095 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:29.095 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/create - - - 204 - - 0.4117ms
+2024-06-18 22:37:29.098 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryTNqKnM9OSWW1d8wS 237
+2024-06-18 22:37:29.098 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:29.099 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:37:29.102 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:29.105 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-18 22:37:29.108 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:29.145 +04:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Completed], [Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-18 22:37:29.165 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-18 22:37:29.165 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 63.1854ms
+2024-06-18 22:37:29.165 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:37:29.165 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryTNqKnM9OSWW1d8wS 237 - 200 - application/json;+charset=utf-8 67.6146ms
+2024-06-18 22:37:31.103 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryBDHKr3vYZqdBAVcS 242
+2024-06-18 22:37:31.103 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:31.103 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:37:31.104 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:31.105 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-18 22:37:31.105 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:31.108 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Completed], [Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-18 22:37:31.113 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-18 22:37:31.113 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 9.7331ms
+2024-06-18 22:37:31.114 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:37:31.114 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryBDHKr3vYZqdBAVcS 242 - 200 - application/json;+charset=utf-8 11.1807ms
+2024-06-18 22:37:33.140 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - -
+2024-06-18 22:37:33.140 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.140 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - - - 204 - - 0.3803ms
+2024-06-18 22:37:33.142 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryooZxGKdBSYTF0oK0 236
+2024-06-18 22:37:33.142 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.143 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:33.143 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:33.144 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:33.145 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:33.147 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:33.149 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:33.149 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:33.149 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 6.2731ms
+2024-06-18 22:37:33.149 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:33.149 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryooZxGKdBSYTF0oK0 236 - 200 - application/json;+charset=utf-8 7.1592ms
+2024-06-18 22:37:33.153 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:33.154 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.154 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.3914ms
+2024-06-18 22:37:33.156 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:33.157 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.157 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:33.157 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:33.159 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:33.160 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:33.160 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:33.160 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:33.161 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.1179ms
+2024-06-18 22:37:33.161 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:33.161 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.3473ms
+2024-06-18 22:37:33.638 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryc6dA5VwTehu5AaMe 237
+2024-06-18 22:37:33.638 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.639 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:33.639 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:33.640 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:33.642 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:33.643 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:33.644 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:33.644 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:33.645 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 5.7473ms
+2024-06-18 22:37:33.645 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:33.645 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryc6dA5VwTehu5AaMe 237 - 200 - application/json;+charset=utf-8 6.8090ms
+2024-06-18 22:37:33.650 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:33.650 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:33.651 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:33.651 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:33.652 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:33.653 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:33.654 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:33.654 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:33.654 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.1461ms
+2024-06-18 22:37:33.654 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:33.654 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.3443ms
+2024-06-18 22:37:34.038 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundarypny8IIkyop8AiaIU 236
+2024-06-18 22:37:34.038 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:34.038 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:34.038 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:34.040 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:34.041 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:34.042 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:34.044 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:34.044 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:34.044 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 5.4753ms
+2024-06-18 22:37:34.044 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:34.044 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundarypny8IIkyop8AiaIU 236 - 200 - application/json;+charset=utf-8 6.3524ms
+2024-06-18 22:37:34.049 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:34.049 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:34.049 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:34.050 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:34.051 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:34.052 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:34.052 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:34.052 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:34.053 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.0528ms
+2024-06-18 22:37:34.053 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:34.053 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.4445ms
+2024-06-18 22:37:36.027 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - -
+2024-06-18 22:37:36.028 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:36.028 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - - - 204 - - 0.4372ms
+2024-06-18 22:37:36.030 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundary74GJ6lgmCcMYZMVo 236
+2024-06-18 22:37:36.030 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:36.031 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:36.031 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:36.033 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:36.034 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:36.036 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:36.038 +04:00 [INF] Updated Todo item successfully. ID: 2
+2024-06-18 22:37:36.038 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:36.038 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 7.7133ms
+2024-06-18 22:37:36.038 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:36.039 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundary74GJ6lgmCcMYZMVo 236 - 200 - application/json;+charset=utf-8 8.8337ms
+2024-06-18 22:37:36.045 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:36.045 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:36.045 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:36.046 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:36.047 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:36.048 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:36.048 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:36.048 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:36.049 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.1342ms
+2024-06-18 22:37:36.049 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:36.049 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.4513ms
+2024-06-18 22:37:38.340 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/3 - -
+2024-06-18 22:37:38.340 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:38.341 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/3 - - - 204 - - 0.7892ms
+2024-06-18 22:37:38.342 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/3 multipart/form-data;+boundary=----WebKitFormBoundarySPPA4eSAiemejuYL 241
+2024-06-18 22:37:38.343 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:38.344 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:38.344 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:38.348 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:38.350 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:38.352 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:38.355 +04:00 [INF] Updated Todo item successfully. ID: 3
+2024-06-18 22:37:38.355 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:38.355 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 10.6544ms
+2024-06-18 22:37:38.355 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:38.355 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/3 multipart/form-data;+boundary=----WebKitFormBoundarySPPA4eSAiemejuYL 241 - 200 - application/json;+charset=utf-8 12.8437ms
+2024-06-18 22:37:38.361 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:38.361 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:38.361 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.3187ms
+2024-06-18 22:37:38.362 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:38.363 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:38.363 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:38.363 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:38.364 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:38.365 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:38.365 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:38.365 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:38.365 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 1.8977ms
+2024-06-18 22:37:38.365 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:38.365 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 2.6984ms
+2024-06-18 22:37:39.636 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/3 - -
+2024-06-18 22:37:39.637 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:39.637 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/3 - - - 204 - - 0.4050ms
+2024-06-18 22:37:39.638 +04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/3 - -
+2024-06-18 22:37:39.638 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:39.639 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:37:39.641 +04:00 [INF] Route matched with {action = "Delete", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:39.643 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:39.650 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[Id] = @__id_0
+2024-06-18 22:37:39.654 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [IsDeleted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:39.656 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:39.656 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Delete (ToDoApp) in 15.1433ms
+2024-06-18 22:37:39.656 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:37:39.656 +04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/3 - - - 200 - application/json;+charset=utf-8 17.9881ms
+2024-06-18 22:37:39.661 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:39.661 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:39.661 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:39.661 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:39.662 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:39.663 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:39.663 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:39.663 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:39.664 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.2881ms
+2024-06-18 22:37:39.664 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:39.664 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.0976ms
+2024-06-18 22:37:41.132 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - -
+2024-06-18 22:37:41.133 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:41.133 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - - - 204 - - 0.4873ms
+2024-06-18 22:37:41.135 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundarylZsQW1en2CuAugSd 135
+2024-06-18 22:37:41.135 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:41.135 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:41.136 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:41.137 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:41.138 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:41.139 +04:00 [INF] No updates were made to the Todo item. ID: 2
+2024-06-18 22:37:41.139 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:41.139 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 3.2786ms
+2024-06-18 22:37:41.139 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:41.139 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundarylZsQW1en2CuAugSd 135 - 200 - application/json;+charset=utf-8 4.1022ms
+2024-06-18 22:37:41.144 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:41.144 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:41.144 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:41.144 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:41.145 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:41.147 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:41.147 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:41.147 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:41.147 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.8908ms
+2024-06-18 22:37:41.147 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:41.148 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.8491ms
+2024-06-18 22:37:46.523 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - -
+2024-06-18 22:37:46.524 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:46.524 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/2 - - - 204 - - 0.3195ms
+2024-06-18 22:37:46.526 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryRIxFbhFwKnU3qRKP 138
+2024-06-18 22:37:46.526 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:46.526 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:46.526 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:46.528 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:46.529 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:46.535 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Name] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:46.536 +04:00 [INF] Updated Todo item successfully. ID: 2
+2024-06-18 22:37:46.536 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:46.536 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 10.145ms
+2024-06-18 22:37:46.536 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:46.536 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryRIxFbhFwKnU3qRKP 138 - 200 - application/json;+charset=utf-8 10.9374ms
+2024-06-18 22:37:46.542 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:46.542 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:46.543 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.4024ms
+2024-06-18 22:37:46.545 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:46.545 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:46.546 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:46.546 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:46.547 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:46.549 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:46.549 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:46.549 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:46.549 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.8437ms
+2024-06-18 22:37:46.549 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:46.549 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.3850ms
+2024-06-18 22:37:48.740 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryHH43p1KoU8KAvL7T 239
+2024-06-18 22:37:48.740 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:48.740 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:48.740 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:48.742 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:48.743 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:48.744 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:48.746 +04:00 [INF] Updated Todo item successfully. ID: 2
+2024-06-18 22:37:48.746 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:48.746 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 5.9339ms
+2024-06-18 22:37:48.746 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:48.746 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryHH43p1KoU8KAvL7T 239 - 200 - application/json;+charset=utf-8 6.8620ms
+2024-06-18 22:37:48.751 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:48.752 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:48.752 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:48.752 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:48.753 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:48.755 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:48.755 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:48.755 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:48.755 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.9974ms
+2024-06-18 22:37:48.755 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:48.756 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.0890ms
+2024-06-18 22:37:49.739 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - -
+2024-06-18 22:37:49.739 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:49.739 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - - - 204 - - 0.3040ms
+2024-06-18 22:37:49.741 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryLOaboPkfcBQ1kIcN 237
+2024-06-18 22:37:49.741 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:49.742 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:49.742 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:49.743 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:49.745 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:49.747 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:49.749 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:37:49.749 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:49.749 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 7.2767ms
+2024-06-18 22:37:49.749 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:49.749 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryLOaboPkfcBQ1kIcN 237 - 200 - application/json;+charset=utf-8 8.3397ms
+2024-06-18 22:37:49.754 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:49.755 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:49.755 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:49.755 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:49.757 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:49.758 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:49.758 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:49.759 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:49.759 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.3978ms
+2024-06-18 22:37:49.759 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:49.759 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.6210ms
+2024-06-18 22:37:50.549 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryJrVLclM3dS00j483 238
+2024-06-18 22:37:50.549 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:50.550 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:50.550 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:50.552 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:50.553 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:37:50.555 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:37:50.557 +04:00 [INF] Updated Todo item successfully. ID: 2
+2024-06-18 22:37:50.557 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:37:50.557 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 6.9913ms
+2024-06-18 22:37:50.557 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:37:50.557 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/2 multipart/form-data;+boundary=----WebKitFormBoundaryJrVLclM3dS00j483 238 - 200 - application/json;+charset=utf-8 8.2853ms
+2024-06-18 22:37:50.562 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:37:50.563 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:37:50.563 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:50.564 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:37:50.565 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:37:50.566 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:37:50.566 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:37:50.566 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:37:50.566 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.7481ms
+2024-06-18 22:37:50.566 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:37:50.567 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.1763ms
+2024-06-18 22:38:02.020 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/2 - -
+2024-06-18 22:38:02.020 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:38:02.020 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/2 - - - 204 - - 0.4662ms
+2024-06-18 22:38:02.022 +04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/2 - -
+2024-06-18 22:38:02.022 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:38:02.023 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:38:02.023 +04:00 [INF] Route matched with {action = "Delete", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:38:02.024 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:38:02.025 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[Id] = @__id_0
+2024-06-18 22:38:02.028 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [IsDeleted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:38:02.030 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:38:02.030 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Delete (ToDoApp) in 6.9163ms
+2024-06-18 22:38:02.030 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:38:02.030 +04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/2 - - - 200 - application/json;+charset=utf-8 7.9621ms
+2024-06-18 22:38:02.035 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:38:02.035 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:38:02.035 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.3430ms
+2024-06-18 22:38:02.037 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:38:02.037 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:38:02.038 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:38:02.038 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:38:02.039 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:38:02.040 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:38:02.040 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:38:02.040 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:38:02.040 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.546ms
+2024-06-18 22:38:02.041 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:38:02.041 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.4998ms
+2024-06-18 22:41:47.310 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - -
+2024-06-18 22:41:47.311 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:41:47.311 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/update/1 - - - 204 - - 0.2231ms
+2024-06-18 22:41:47.312 +04:00 [INF] Request starting HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryjU2tRG1mq0w9pgYi 236
+2024-06-18 22:41:47.312 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:41:47.312 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:41:47.312 +04:00 [INF] Route matched with {action = "Update", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(Int32, ToDoApp.DTOs.TodoUpdateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:41:47.313 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:41:47.318 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE ([t].[Id] = @__id_0) AND ([t].[IsDeleted] = CAST(0 AS bit))
+2024-06-18 22:41:47.321 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [Completed] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:41:47.322 +04:00 [INF] Updated Todo item successfully. ID: 1
+2024-06-18 22:41:47.322 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:41:47.322 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Update (ToDoApp) in 10.0924ms
+2024-06-18 22:41:47.322 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Update (ToDoApp)'
+2024-06-18 22:41:47.322 +04:00 [INF] Request finished HTTP/2 PUT https://localhost:7252/api/ToDo/update/1 multipart/form-data;+boundary=----WebKitFormBoundaryjU2tRG1mq0w9pgYi 236 - 200 - application/json;+charset=utf-8 10.6288ms
+2024-06-18 22:41:47.325 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:41:47.325 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:41:47.325 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.1227ms
+2024-06-18 22:41:47.326 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:41:47.326 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:41:47.326 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:41:47.326 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:41:47.326 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:41:47.329 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:41:47.329 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:41:47.329 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:41:47.329 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.7715ms
+2024-06-18 22:41:47.329 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:41:47.329 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.1482ms
+2024-06-18 22:42:01.987 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/1 - -
+2024-06-18 22:42:01.988 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:42:01.988 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/delete/1 - - - 204 - - 0.2653ms
+2024-06-18 22:42:01.990 +04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/1 - -
+2024-06-18 22:42:01.990 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:42:01.990 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:42:01.990 +04:00 [INF] Route matched with {action = "Delete", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:42:01.991 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:42:01.994 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[Id] = @__id_0
+2024-06-18 22:42:01.997 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Todos] SET [IsDeleted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-06-18 22:42:01.998 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.Entities.Todo'.
+2024-06-18 22:42:01.998 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Delete (ToDoApp) in 7.8394ms
+2024-06-18 22:42:01.998 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Delete (ToDoApp)'
+2024-06-18 22:42:01.998 +04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7252/api/ToDo/delete/1 - - - 200 - application/json;+charset=utf-8 8.5635ms
+2024-06-18 22:42:02.003 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:42:02.003 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:42:02.003 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.2300ms
+2024-06-18 22:42:02.005 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:42:02.005 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:42:02.006 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:42:02.006 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:42:02.006 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:42:02.007 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:42:02.008 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:42:02.008 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:42:02.008 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.0868ms
+2024-06-18 22:42:02.008 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:42:02.008 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 2.7604ms
+2024-06-18 22:43:50.205 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - -
+2024-06-18 22:43:50.205 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:43:50.206 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - - - 204 - - 0.9550ms
+2024-06-18 22:43:50.208 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0
+2024-06-18 22:43:50.208 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:43:50.217 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/18/2024 6:42:21 PM', Current time (UTC): '6/18/2024 6:43:50 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-06-18 22:43:50.241 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/18/2024 6:42:21 PM', Current time (UTC): '6/18/2024 6:43:50 PM'.
+2024-06-18 22:43:50.241 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:43:50.244 +04:00 [INF] Route matched with {action = "Exit", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exit() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:43:50.258 +04:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-06-18 22:43:50.258 +04:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-06-18 22:43:50.259 +04:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-06-18 22:43:50.263 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-18 22:43:50.263 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Exit (ToDoApp) in 19.4125ms
+2024-06-18 22:43:50.263 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:43:50.264 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0 - 200 0 - 55.5037ms
+2024-06-18 22:45:09.047 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryPdoPM7g7pdGeSMHC 260
+2024-06-18 22:45:09.047 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:09.047 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:45:09.048 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:45:09.049 +04:00 [INF] User finding by name: FaskaMaybeTaken
+2024-06-18 22:45:09.049 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:09.057 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:45:09.058 +04:00 [INF] Checking userFaskaMaybeTaken's password
+2024-06-18 22:45:09.070 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 22:45:09.070 +04:00 [INF] Creating claims
+2024-06-18 22:45:09.071 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 22:45:09.071 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 23.293ms
+2024-06-18 22:45:09.071 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:45:09.071 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryPdoPM7g7pdGeSMHC 260 - 200 - text/plain;+charset=utf-8 24.2314ms
+2024-06-18 22:45:09.082 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:45:09.082 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:09.082 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - - - 204 - - 0.4183ms
+2024-06-18 22:45:09.082 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:45:09.083 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:09.083 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.2913ms
+2024-06-18 22:45:09.086 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:45:09.086 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:45:09.086 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:09.086 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:09.086 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:45:09.086 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:45:09.087 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:45:09.087 +04:00 [INF] Route matched with {action = "GetUserInf", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInf() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:45:09.087 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:09.088 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:09.092 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:45:09.092 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:45:09.093 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:45:09.093 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 6.5192ms
+2024-06-18 22:45:09.093 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:45:09.093 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 7.6047ms
+2024-06-18 22:45:09.106 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 22:45:09.107 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-18 22:45:09.107 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp) in 20.4813ms
+2024-06-18 22:45:09.107 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:45:09.108 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/Account/GetUser - - - 200 - application/json;+charset=utf-8 21.7235ms
+2024-06-18 22:45:13.505 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo/create - -
+2024-06-18 22:45:13.505 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:13.505 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo/create - - - 204 - - 0.3858ms
+2024-06-18 22:45:13.507 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary3uLXVz1AXGQsbeux 240
+2024-06-18 22:45:13.508 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:13.508 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:45:13.508 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:45:13.508 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-18 22:45:13.509 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:13.515 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Completed], [Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-18 22:45:13.518 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-18 22:45:13.518 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 10.2659ms
+2024-06-18 22:45:13.518 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 22:45:13.518 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary3uLXVz1AXGQsbeux 240 - 200 - application/json;+charset=utf-8 11.0816ms
+2024-06-18 22:45:14.915 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - -
+2024-06-18 22:45:14.915 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:14.915 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - - - 204 - - 0.2777ms
+2024-06-18 22:45:14.916 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0
+2024-06-18 22:45:14.917 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:14.917 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:45:14.917 +04:00 [INF] Route matched with {action = "Exit", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exit() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:45:14.917 +04:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-06-18 22:45:14.917 +04:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-06-18 22:45:14.917 +04:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-06-18 22:45:14.918 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-18 22:45:14.918 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Exit (ToDoApp) in 0.6624ms
+2024-06-18 22:45:14.918 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:45:14.918 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0 - 200 0 - 1.2630ms
+2024-06-18 22:45:21.684 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundary694a717btscvT26v 260
+2024-06-18 22:45:21.685 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:21.685 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:45:21.685 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:45:21.686 +04:00 [INF] User finding by name: FaskaMaybeTaken
+2024-06-18 22:45:21.686 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:21.688 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:45:21.688 +04:00 [INF] Checking userFaskaMaybeTaken's password
+2024-06-18 22:45:21.694 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 22:45:21.694 +04:00 [INF] Creating claims
+2024-06-18 22:45:21.695 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 22:45:21.695 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 10.197ms
+2024-06-18 22:45:21.695 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:45:21.695 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundary694a717btscvT26v 260 - 200 - text/plain;+charset=utf-8 10.8998ms
+2024-06-18 22:45:21.712 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:45:21.713 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:21.713 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - - - 204 - - 0.3900ms
+2024-06-18 22:45:21.713 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:45:21.713 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:21.713 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.2649ms
+2024-06-18 22:45:21.715 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:45:21.715 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:45:21.715 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:21.716 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:45:21.716 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:45:21.716 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:45:21.716 +04:00 [INF] Route matched with {action = "GetUserInf", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInf() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:45:21.716 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:45:21.717 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:21.717 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:45:21.718 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:45:21.718 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:45:21.719 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:45:21.719 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 2.9168ms
+2024-06-18 22:45:21.719 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:45:21.719 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 3.7098ms
+2024-06-18 22:45:21.719 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 22:45:21.719 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-18 22:45:21.720 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp) in 4.0298ms
+2024-06-18 22:45:21.720 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:45:21.720 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/Account/GetUser - - - 200 - application/json;+charset=utf-8 4.9383ms
+2024-06-18 22:46:06.501 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - -
+2024-06-18 22:46:06.501 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:06.502 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/SignOut - - - 204 - - 0.4399ms
+2024-06-18 22:46:06.504 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0
+2024-06-18 22:46:06.504 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:06.504 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:46:06.504 +04:00 [INF] Route matched with {action = "Exit", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exit() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:46:06.505 +04:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-06-18 22:46:06.505 +04:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-06-18 22:46:06.505 +04:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-06-18 22:46:06.505 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-18 22:46:06.505 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Exit (ToDoApp) in 0.6203ms
+2024-06-18 22:46:06.505 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 22:46:06.505 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/SignOut application/x-www-form-urlencoded 0 - 200 0 - 1.3222ms
+2024-06-18 22:46:25.193 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/Register - -
+2024-06-18 22:46:25.193 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:25.193 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/Register - - - 204 - - 0.4407ms
+2024-06-18 22:46:25.196 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Register application/json 117
+2024-06-18 22:46:25.196 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:25.196 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Registration (ToDoApp)'
+2024-06-18 22:46:25.196 +04:00 [INF] Route matched with {action = "Registration", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Registration(ToDoApp.DTOs.RegistrationDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:46:25.198 +04:00 [INF] Attempting to create a new user account
+2024-06-18 22:46:25.203 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:46:25.210 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:46:25.214 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-18 22:46:25.220 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2024-06-18 22:46:25.225 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]
+        WHERE [a].[Name] = N'Member') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-18 22:46:25.228 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-18 22:46:25.232 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2024-06-18 22:46:25.234 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-18 22:46:25.236 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:46:25.237 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-18 22:46:25.242 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2024-06-18 22:46:25.250 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;
+2024-06-18 22:46:25.251 +04:00 [INF] User added to the Member role
+2024-06-18 22:46:25.251 +04:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Identity.IdentityResult'.
+2024-06-18 22:46:25.251 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Registration (ToDoApp) in 55.3151ms
+2024-06-18 22:46:25.251 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Registration (ToDoApp)'
+2024-06-18 22:46:25.251 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Register application/json 117 - 200 - application/json;+charset=utf-8 55.8964ms
+2024-06-18 22:46:32.029 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryLTbS37j8b0UsxqMU 261
+2024-06-18 22:46:32.029 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:32.029 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:46:32.029 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:46:32.030 +04:00 [INF] User finding by name: FaskaMaybeTaken2
+2024-06-18 22:46:32.031 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:46:32.033 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 22:46:32.033 +04:00 [INF] Checking userFaskaMaybeTaken2's password
+2024-06-18 22:46:32.042 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 22:46:32.042 +04:00 [INF] Creating claims
+2024-06-18 22:46:32.042 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 22:46:32.042 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 12.6849ms
+2024-06-18 22:46:32.042 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 22:46:32.042 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryLTbS37j8b0UsxqMU 261 - 200 - text/plain;+charset=utf-8 13.2951ms
+2024-06-18 22:46:32.054 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:46:32.054 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:32.054 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/Account/GetUser - - - 204 - - 0.1850ms
+2024-06-18 22:46:32.054 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7252/api/ToDo - -
+2024-06-18 22:46:32.055 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:32.055 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7252/api/ToDo - - - 204 - - 0.3809ms
+2024-06-18 22:46:32.056 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/Account/GetUser - -
+2024-06-18 22:46:32.056 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:32.056 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/api/ToDo - -
+2024-06-18 22:46:32.056 +04:00 [INF] CORS policy execution successful.
+2024-06-18 22:46:32.056 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:46:32.057 +04:00 [INF] Route matched with {action = "GetUserInf", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInf() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 22:46:32.057 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:46:32.057 +04:00 [INF] Route matched with {action = "Get", controller = "ToDo"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 22:46:32.057 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:46:32.057 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:46:32.060 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Completed], [t].[Date], [t].[IsDeleted], [t].[Name]
+FROM [Todos] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit)
+2024-06-18 22:46:32.060 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 22:46:32.060 +04:00 [INF] Retrieved all Todo items successfully.
+2024-06-18 22:46:32.060 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ToDoApp.DTOs.TodoGetDTO, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-18 22:46:32.060 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-18 22:46:32.061 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Get (ToDoApp) in 3.9042ms
+2024-06-18 22:46:32.061 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Get (ToDoApp)'
+2024-06-18 22:46:32.061 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp) in 4.0458ms
+2024-06-18 22:46:32.061 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.GetUserInf (ToDoApp)'
+2024-06-18 22:46:32.061 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/ToDo - - - 200 - application/json;+charset=utf-8 4.4822ms
+2024-06-18 22:46:32.061 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/api/Account/GetUser - - - 200 - application/json;+charset=utf-8 4.5871ms
+2024-06-18 22:59:34.833 +04:00 [WRN] The foreign key property 'Todo.CustomUserId1' was created in shadow state because a conflicting property with the simple name 'CustomUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2024-06-18 22:59:35.004 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:59:35.022 +04:00 [WRN] The foreign key property 'Todo.CustomUserId1' was created in shadow state because a conflicting property with the simple name 'CustomUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2024-06-18 22:59:40.343 +04:00 [WRN] The foreign key property 'Todo.CustomUserId1' was created in shadow state because a conflicting property with the simple name 'CustomUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2024-06-18 22:59:40.535 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 22:59:40.917 +04:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 22:59:40.941 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 22:59:40.944 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 22:59:40.945 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 22:59:40.965 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 22:59:40.978 +04:00 [INF] Applying migration '20240618185935_customUserTableAdded'.
+2024-06-18 22:59:41.039 +04:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] int NOT NULL DEFAULT 0;
+2024-06-18 22:59:41.042 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId1] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 22:59:41.085 +04:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId1] ON [Todos] ([CustomUserId1]);
+2024-06-18 22:59:41.119 +04:00 [ERR] Failed executing DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId1] FOREIGN KEY ([CustomUserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:01:03.062 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:01:06.148 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:01:06.514 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:01:06.536 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:01:06.539 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:01:06.540 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:01:06.566 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:01:06.582 +04:00 [INF] Applying migration '20240618185935_customUserTableAdded'.
+2024-06-18 23:01:06.634 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] int NOT NULL DEFAULT 0;
+2024-06-18 23:01:06.638 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId1] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:01:06.645 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId1] ON [Todos] ([CustomUserId1]);
+2024-06-18 23:01:06.658 +04:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId1] FOREIGN KEY ([CustomUserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:01:15.104 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:01:15.526 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:01:15.548 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:01:15.575 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:01:21.087 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:01:27.725 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:01:28.118 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:01:28.142 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:01:28.145 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:01:28.146 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:01:28.164 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:01:28.182 +04:00 [INF] Applying migration '20240618190121_customUserTableAdded'.
+2024-06-18 23:01:28.213 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240618190121_customUserTableAdded', N'6.0.29');
+2024-06-18 23:12:02.379 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:12:06.833 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:12:07.127 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:12:07.150 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:12:07.153 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:12:07.154 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:12:07.170 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:12:07.190 +04:00 [INF] Applying migration '20240618191202_toDoColumnAddedToUser'.
+2024-06-18 23:12:07.247 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:12:07.253 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [UserId] nvarchar(max) NOT NULL DEFAULT N'';
+2024-06-18 23:12:07.259 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:12:07.271 +04:00 [ERR] Failed executing DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:12:31.670 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:12:32.014 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:12:32.039 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:12:32.046 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:12:36.564 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:12:41.274 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:12:41.580 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:12:41.603 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:12:41.606 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:12:41.606 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:12:41.615 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:12:41.628 +04:00 [INF] Applying migration '20240618191236_toDoColumnAddedToUser'.
+2024-06-18 23:12:41.671 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:12:41.676 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [UserId] nvarchar(max) NOT NULL DEFAULT N'';
+2024-06-18 23:12:41.682 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:12:41.693 +04:00 [ERR] Failed executing DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:13:55.265 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:13:55.627 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:13:55.650 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:13:55.656 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:14:01.657 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:14:08.908 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:14:09.178 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:14:09.202 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:14:09.205 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:14:09.206 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:14:09.224 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:14:09.240 +04:00 [INF] Applying migration '20240618191401_toDoColumnAddedToUser'.
+2024-06-18 23:14:09.285 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:14:09.290 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:14:09.300 +04:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:17:11.779 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:17:12.132 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:17:12.155 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:17:12.161 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:17:16.455 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:17:51.416 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:17:51.703 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:17:51.725 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:17:51.728 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:17:51.729 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:17:51.739 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:17:51.752 +04:00 [INF] Applying migration '20240618191716_toDoColumnAddedToUser'.
+2024-06-18 23:17:51.795 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:17:51.806 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:17:51.814 +04:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:18:35.356 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:18:35.723 +04:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:18:35.746 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:18:35.752 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:18:45.197 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:18:51.012 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:18:51.279 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:18:51.303 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:18:51.306 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:18:51.307 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:18:51.315 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:18:51.328 +04:00 [INF] Applying migration '20240618191845_toDoColumnAddedToUser'.
+2024-06-18 23:18:51.380 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(450) NOT NULL DEFAULT N'';
+2024-06-18 23:18:51.385 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:18:51.394 +04:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:18:57.021 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:18:57.376 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:18:57.399 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:18:57.405 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:21:22.612 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:21:27.917 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:21:28.207 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:21:28.230 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:21:28.233 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:21:28.233 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:21:28.242 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:21:28.255 +04:00 [INF] Applying migration '20240618192122_toDoColumnAddedToUser'.
+2024-06-18 23:21:28.303 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUsers] ADD [Test] int NOT NULL DEFAULT 0;
+2024-06-18 23:21:28.305 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240618192122_toDoColumnAddedToUser', N'6.0.29');
+2024-06-18 23:22:42.395 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:22:42.650 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:22:42.672 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:22:42.675 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:22:42.676 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:22:42.687 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:22:42.708 +04:00 [INF] Reverting migration '20240618192122_toDoColumnAddedToUser'.
+2024-06-18 23:22:42.792 +04:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[AspNetUsers]') AND [c].[name] = N'Test');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [AspNetUsers] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [AspNetUsers] DROP COLUMN [Test];
+2024-06-18 23:22:42.797 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20240618192122_toDoColumnAddedToUser';
+2024-06-18 23:22:46.642 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:22:46.982 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:22:47.004 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:22:47.011 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:23:49.218 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:23:54.566 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:23:54.865 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:23:54.887 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:23:54.891 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:23:54.891 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:23:54.900 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:23:54.913 +04:00 [INF] Applying migration '20240618192349_toDoColumnAddedToUser'.
+2024-06-18 23:23:54.958 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD [CustomUserId] nvarchar(max) NOT NULL DEFAULT N'';
+2024-06-18 23:23:54.960 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240618192349_toDoColumnAddedToUser', N'6.0.29');
+2024-06-18 23:24:49.521 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:24:56.026 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:24:56.306 +04:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:24:56.329 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:24:56.332 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:24:56.333 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:24:56.342 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:24:56.362 +04:00 [INF] Applying migration '20240618192449_toDoColumnAddedToUser2'.
+2024-06-18 23:24:56.449 +04:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Todos]') AND [c].[name] = N'CustomUserId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Todos] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Todos] ALTER COLUMN [CustomUserId] nvarchar(450) NOT NULL;
+2024-06-18 23:24:56.452 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Todos_CustomUserId] ON [Todos] ([CustomUserId]);
+2024-06-18 23:24:56.458 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Todos] ADD CONSTRAINT [FK_Todos_AspNetUsers_CustomUserId] FOREIGN KEY ([CustomUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+2024-06-18 23:24:56.459 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240618192449_toDoColumnAddedToUser2', N'6.0.29');
+2024-06-18 23:25:14.951 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:25:49.553 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:25:49.821 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:25:49.843 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:25:49.846 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-18 23:25:49.847 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-18 23:25:49.855 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-18 23:25:49.868 +04:00 [INF] Applying migration '20240618192515_toDoColumnAddedToUser3'.
+2024-06-18 23:25:49.898 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240618192515_toDoColumnAddedToUser3', N'6.0.29');
+2024-06-18 23:44:26.586 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-18 23:44:26.741 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-18 23:44:26.741 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-18 23:44:26.743 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-18 23:44:26.744 +04:00 [INF] Hosting environment: Development
+2024-06-18 23:44:26.744 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-18 23:44:27.193 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-18 23:44:27.528 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 336.5093ms
+2024-06-18 23:44:27.541 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-18 23:44:27.545 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 4.5777ms
+2024-06-18 23:44:27.549 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-18 23:44:27.592 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.6097ms
+2024-06-18 23:44:27.669 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-18 23:44:27.757 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.1071ms
+2024-06-18 23:44:57.025 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryKOgHpTjJuZppUqUo 239
+2024-06-18 23:44:57.039 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:44:57.039 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:44:57.097 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-18 23:44:57.103 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-18 23:44:57.104 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundaryKOgHpTjJuZppUqUo 239 - 401 0 - 78.5234ms
+2024-06-18 23:45:12.172 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryeo9zR4RqddHlv2TD 258
+2024-06-18 23:45:12.173 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:45:12.173 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:45:12.182 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 23:45:12.254 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 23:45:12.695 +04:00 [INF] User finding by name: FaskaNotTaken
+2024-06-18 23:45:14.134 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:45:15.245 +04:00 [INF] Executed DbCommand (96ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 23:45:15.426 +04:00 [INF] Checking userFaskaNotTaken's password
+2024-06-18 23:45:15.549 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 23:45:15.552 +04:00 [INF] Creating claims
+2024-06-18 23:45:15.736 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 23:45:15.746 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 3483.4155ms
+2024-06-18 23:45:15.747 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 23:45:15.755 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundaryeo9zR4RqddHlv2TD 258 - 200 - text/plain;+charset=utf-8 3582.9715ms
+2024-06-18 23:45:32.881 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary5DEv8zsyhMysNWF4 242
+2024-06-18 23:45:32.884 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:45:32.884 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:45:33.001 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 23:45:33.008 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 23:45:33.099 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:45:33.123 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 23:45:33.125 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-18 23:45:33.412 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Completed], [CustomUserId], [Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-18 23:45:33.468 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-18 23:45:33.493 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 485.0505ms
+2024-06-18 23:45:33.493 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 23:45:33.494 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundary5DEv8zsyhMysNWF4 242 - 200 - application/json;+charset=utf-8 612.6671ms
+2024-06-18 23:46:20.094 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/SignOut - 0
+2024-06-18 23:46:20.097 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:46:20.097 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:46:20.098 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 23:46:20.104 +04:00 [INF] Route matched with {action = "Exit", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exit() on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 23:46:20.139 +04:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-06-18 23:46:20.141 +04:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-06-18 23:46:20.142 +04:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-06-18 23:46:20.150 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-18 23:46:20.150 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Exit (ToDoApp) in 45.1681ms
+2024-06-18 23:46:20.150 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Exit (ToDoApp)'
+2024-06-18 23:46:20.151 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/SignOut - 0 - 200 0 - 56.5741ms
+2024-06-18 23:46:33.747 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundarynUQdIsjOzJf6K4eW 260
+2024-06-18 23:46:33.747 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:46:33.747 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:46:33.747 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 23:46:33.747 +04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ToDoApp.DTOs.LoginDTO) on controller ToDoApp.Controllers.AccountController (ToDoApp).
+2024-06-18 23:46:33.749 +04:00 [INF] User finding by name: FaskaMaybeTaken
+2024-06-18 23:46:33.767 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:46:33.775 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-18 23:46:33.775 +04:00 [INF] Checking userFaskaMaybeTaken's password
+2024-06-18 23:46:33.781 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-18 23:46:33.781 +04:00 [INF] Creating claims
+2024-06-18 23:46:33.781 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-06-18 23:46:33.781 +04:00 [INF] Executed action ToDoApp.Controllers.AccountController.Login (ToDoApp) in 34.431ms
+2024-06-18 23:46:33.782 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.AccountController.Login (ToDoApp)'
+2024-06-18 23:46:33.782 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/Account/Login multipart/form-data;+boundary=----WebKitFormBoundarynUQdIsjOzJf6K4eW 260 - 200 - text/plain;+charset=utf-8 35.1657ms
+2024-06-18 23:47:03.548 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundarylKBf9aBHRGvgdsRi 247
+2024-06-18 23:47:03.549 +04:00 [INF] CORS policy execution failed.
+2024-06-18 23:47:03.549 +04:00 [INF] Request origin https://localhost:7252 does not have permission to access the resource.
+2024-06-18 23:47:03.550 +04:00 [INF] Executing endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 23:47:03.550 +04:00 [INF] Route matched with {action = "Create", controller = "ToDo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ToDoApp.DTOs.TodoCreateDTO) on controller ToDoApp.Controllers.ToDoController (ToDoApp).
+2024-06-18 23:47:03.552 +04:00 [INF] Entity Framework Core 6.0.29 initialized 'ToDoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-06-18 23:47:03.554 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-06-18 23:47:03.555 +04:00 [INF] Created Todo item successfully. ID: 0
+2024-06-18 23:47:03.559 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Todos] ([Completed], [CustomUserId], [Date], [IsDeleted], [Name])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Todos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-06-18 23:47:03.563 +04:00 [INF] Executing OkObjectResult, writing value of type 'ToDoApp.DTOs.TodoCreateDTO'.
+2024-06-18 23:47:03.564 +04:00 [INF] Executed action ToDoApp.Controllers.ToDoController.Create (ToDoApp) in 13.1707ms
+2024-06-18 23:47:03.564 +04:00 [INF] Executed endpoint 'ToDoApp.Controllers.ToDoController.Create (ToDoApp)'
+2024-06-18 23:47:03.564 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7252/api/ToDo/create multipart/form-data;+boundary=----WebKitFormBoundarylKBf9aBHRGvgdsRi 247 - 200 - application/json;+charset=utf-8 15.6014ms
+2024-06-18 23:50:14.956 +04:00 [INF] User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-18 23:50:15.067 +04:00 [INF] Now listening on: https://localhost:7252
+2024-06-18 23:50:15.067 +04:00 [INF] Now listening on: http://localhost:5118
+2024-06-18 23:50:15.070 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-18 23:50:15.070 +04:00 [INF] Hosting environment: Development
+2024-06-18 23:50:15.070 +04:00 [INF] Content root path: C:\Users\acer\Desktop\ToDoApp\ToDoApp\
+2024-06-18 23:50:15.233 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/index.html - -
+2024-06-18 23:50:15.452 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/index.html - - - 200 - text/html;charset=utf-8 221.6582ms
+2024-06-18 23:50:15.459 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - -
+2024-06-18 23:50:15.459 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/_vs/browserLink - -
+2024-06-18 23:50:15.461 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_framework/aspnetcore-browser-refresh.js - - - 200 12346 application/javascript;+charset=utf-8 1.7710ms
+2024-06-18 23:50:15.466 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.6547ms
+2024-06-18 23:50:15.834 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - -
+2024-06-18 23:50:15.926 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7252/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 92.3916ms

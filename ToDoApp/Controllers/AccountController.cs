@@ -12,6 +12,7 @@ using System.Security.Claims;
 using System.Text;
 using ToDoApp.DAL;
 using ToDoApp.DTOs;
+using ToDoApp.Entities;
 using ToDoApp.Helpers;
 
 namespace ToDoApp.Controllers
@@ -23,13 +24,13 @@ namespace ToDoApp.Controllers
         private readonly ToDoDBContext _context;
         private readonly ILogger<AccountController> _logger;
         private readonly IMapper _mapper;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<CustomUser> _userManager;
+        private readonly SignInManager<CustomUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
 
-        public AccountController(ToDoDBContext context, IMapper mapper , ILogger<AccountController> logger, SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager , IConfiguration configuration)
+        public AccountController(ToDoDBContext context, IMapper mapper , ILogger<AccountController> logger, SignInManager<CustomUser> signInManager,
+            UserManager<CustomUser> userManager, RoleManager<IdentityRole> roleManager , IConfiguration configuration)
         {
             _context = context;
             _mapper = mapper;
@@ -56,7 +57,7 @@ namespace ToDoApp.Controllers
                 });
             }
 
-            IdentityUser user = new IdentityUser
+            CustomUser user = new CustomUser
             {
                 UserName = account.Name,
                 Email = account.Email,
@@ -107,7 +108,7 @@ namespace ToDoApp.Controllers
             }
 
             _logger.LogInformation($"User finding by name: {account.Username}");
-            IdentityUser user = await _userManager.FindByNameAsync(account.Username);
+            CustomUser user = await _userManager.FindByNameAsync(account.Username);
             if (user is null)
             {
                 _logger.LogError($"User not found: {account}");
@@ -160,7 +161,7 @@ namespace ToDoApp.Controllers
         [HttpGet("GetUser")]
         public async Task<IActionResult> GetUserInf()
         {
-            IdentityUser user =  await _userManager.GetUserAsync(User);
+            CustomUser user =  await _userManager.GetUserAsync(User);
             string email  = await _userManager.GetEmailAsync(user);
             string name = User.Identity!.Name!;
 

@@ -5,7 +5,7 @@ using ToDoApp.Entities;
 
 namespace ToDoApp.DAL
 {
-    public class ToDoDBContext : IdentityDbContext
+    public class ToDoDBContext : IdentityDbContext<CustomUser>
     {
         public ToDoDBContext(DbContextOptions<ToDoDBContext> options) : base(options)
         {
@@ -13,5 +13,6 @@ namespace ToDoApp.DAL
         }
 
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<CustomUser> CustomUsers     { get; set; }
     }
 }

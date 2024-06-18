@@ -10,6 +10,7 @@ using Serilog;
 using System.Text;
 using ToDoApp;
 using ToDoApp.DAL;
+using ToDoApp.Entities;
 using ToDoApp.Mapper;
 using ToDoApp.Validators;
 
@@ -33,7 +34,7 @@ builder.Services.AddDbContext<ToDoDBContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+builder.Services.AddIdentity<CustomUser, IdentityRole>(options =>
 {
     // Password settings
     options.Password.RequireDigit = true;
