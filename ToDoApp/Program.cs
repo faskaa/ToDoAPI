@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text;
 using ToDoApp;
@@ -16,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
-    .WriteTo.File("Log/Todo.txt" , rollingInterval: RollingInterval.Day)
+    .WriteTo.File("Log/Todo.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 builder.Host.UseSerilog();
@@ -60,6 +61,7 @@ builder.Services.AddAutoMapper(cfg =>
     cfg.AddProfile<MapperProfile>();
 });
 builder.Services.AddFluentValidation().AddFluentValidationClientsideAdapters().AddValidatorsFromAssemblyContaining<RegisterDTOValidator>();
+
 builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -76,6 +78,48 @@ builder.Services.AddAuthentication(opt =>
     };
 });
 
+// Add CORS service
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials();
+        });
+});
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ToDoApp API", Version = "v1" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -86,6 +130,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigin"); // Use CORS policy
 
 app.UseAuthentication();
 app.UseAuthorization();

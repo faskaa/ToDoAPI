@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public bool IsDeleted { get; set; }
-        public bool IsActive { get; set; }
+        public bool Completed { get; set; }
     }
 }

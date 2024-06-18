@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.Execution;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +43,7 @@ namespace ToDoApp.Controllers
         [HttpPost("Register")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [EnableCors("AllowSpecificOrigin")]
         public async Task<IActionResult> Registration(RegistrationDTO account)
         {
             if (!ModelState.IsValid)
@@ -140,7 +142,7 @@ namespace ToDoApp.Controllers
                 audience: _configuration["JWT:Audience"],
                 claims:claims,
                 signingCredentials:creds,
-                expires: DateTime.Now.AddMinutes(1)
+                expires: DateTime.Now.AddMinutes(5)
                 );
 
             string tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
@@ -154,6 +156,18 @@ namespace ToDoApp.Controllers
             await _signInManager.SignOutAsync(); 
             return Ok();
         }
+
+        [HttpGet("GetUser")]
+        public async Task<IActionResult> GetUserInf()
+        {
+            IdentityUser user =  await _userManager.GetUserAsync(User);
+            string email  = await _userManager.GetEmailAsync(user);
+            string name = User.Identity!.Name!;
+
+            
+            return Ok(new{Email = email, Name = name});
+        }
+
 
         //[HttpPost("CreateRole")]
         //public async Task CreateRoles()

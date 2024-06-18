@@ -25,7 +25,7 @@ namespace ToDoApp.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        //[Authorize]
+        [Authorize]
         public IActionResult Get()
         {
             List<Todo> todo = _context.Todos.Where(x=>x.IsDeleted == false).ToList();
@@ -80,25 +80,41 @@ namespace ToDoApp.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [Authorize] 
+        [Authorize]
         public IActionResult Update(int id, [FromForm] TodoUpdateDTO updatedTodo)
         {
+            // Check if the Todo item exists
             Todo todo = _context.Todos.FirstOrDefault(x => x.Id == id && x.IsDeleted == false)!;
             if (todo is null)
             {
-                _logger.LogError($"Todo item not found with {id} ID");
+                _logger.LogError($"Todo item not found with ID: {id}");
                 return NotFound();
             }
 
-            if (!string.IsNullOrEmpty(updatedTodo.Name))
+            // Update relevant fields
+            bool isUpdated = false;
+            if (!string.IsNullOrEmpty(updatedTodo.Name) && updatedTodo.Name != todo.Name)
             {
                 todo.Name = updatedTodo.Name;
-                _context.SaveChanges();
-                _logger.LogInformation($"Updated Todo item successfully. ID: {id}");
-
+                isUpdated = true;
             }
 
-            return Ok(updatedTodo);
+            if (updatedTodo.Completed.HasValue && updatedTodo.Completed != todo.Completed)
+            {
+                todo.Completed = updatedTodo.Completed.Value;
+                isUpdated = true;
+            }
+
+            // Save changes if any updates were made
+            if (isUpdated)
+            {
+                _context.SaveChanges();
+                _logger.LogInformation($"Updated Todo item successfully. ID: {id}");
+                return Ok(todo); // Return the updated entity
+            }
+
+            _logger.LogInformation($"No updates were made to the Todo item. ID: {id}");
+            return Ok(todo); // Return the entity as it was not modified
         }
 
         [HttpDelete("delete/{id}")]
